@@ -21,6 +21,7 @@ const contactSchema = Schema(
       ref: "user",
       required: true,
     },
+
   },
   { versionKey: false, timestamps: true }
 );
@@ -30,3 +31,4 @@ const Contact = model("contact", contactSchema);
 module.exports = {
   Contact,
 };
+
