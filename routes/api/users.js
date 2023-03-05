@@ -8,7 +8,9 @@ const router = express.Router();
 router.post("/signup", validation(usersJoiSchema), ctrlWrapper(ctrl.signup));
 router.post("/login", validation(usersJoiSchema), ctrlWrapper(ctrl.login));
 router.post("/logout", auth, ctrlWrapper(ctrl.logout));
+router.post("/verify", ctrlWrapper(ctrl.resendVerifyEmail));
 router.get("/current", auth, ctrlWrapper(ctrl.getCurrent));
+router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verifyEmail));
 router.patch(
   "/avatars",
   auth,
